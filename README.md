@@ -221,3 +221,42 @@ Using `[count]c{motion}`, behave like the `d` command.
 
 - `J` join line and add some space
 - `gJ` join line but don't add space
+
+#### 2.7.5. Search
+
+Linewise searching
+
+- `f{character}`: search forward
+- `F{character}`: search backward
+- Press `;` to repeat the search (forward)
+- Press `,` to repeat the search (backward)
+- `t{character}`: place the cursor before the seach result
+- `T{character}`: place the cursor after the seach result
+
+`f` & `t` are motions
+
+Search the entire file
+
+- `/{keyword}`
+- Press `n` to move to the next result
+- Press `N` to move to the previous result
+
+Search options
+
+- `is (incsearch`: search realtime
+- `hls (highlightsearch)`: highlight search results
+- `:nohls` to remove highlighting (not disable)
+
+Common pattern
+
+- performing a search `/and`
+- using `cw` to change word
+- press `Esc`
+- press `n` to move to the next match
+- press `.` to repeat the previous command (`cw`)
+
+Search backward using `?` instead of `/`
+
+Place the cursor under a word and press `*` (or `#`) to go to the next instance of this word. (press `n` or `N` to move)
+
+`/` also the `motion`, so we can combine this with an `operator` like `d`
