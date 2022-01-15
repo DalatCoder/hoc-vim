@@ -260,3 +260,22 @@ Search backward using `?` instead of `/`
 Place the cursor under a word and press `*` (or `#`) to go to the next instance of this word. (press `n` or `N` to move)
 
 `/` also the `motion`, so we can combine this with an `operator` like `d`
+
+#### 2.7.6. Substitude (find and replace)
+
+- `:s/old/new/` perform search and replace in the current line (the first occurence)
+
+- `:s/old/new/[flags]`, using `g` for change all occurences on the current line
+
+- `[range]s/old/new/[flags]`, for finding and replacing on multiple line
+
+- `:1s`, change in the line with number of `1`
+- `:1,5s`, change in the first line to line 5
+- `$`: last line
+- `.`: current line
+- `:.,$`: current line to the lastline
+- `%` or (1,$): all lines (entire file)
+
+Specify `range` by the `pattern`: `/pattern-1/,/pattern-2/`
+
+Define a custom `pattern` sign: `:s#pattern-1#,#pattern-2#/old/new/g`
