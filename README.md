@@ -45,3 +45,49 @@ Vim modes:
 - `set no...`
 - to toggle an option, place a `!` at the end of the option `set ruler!`
 
+### 2.2. Deleting Text and Thinking in Vim
+
+- delete a character under the cursor: x
+- delete a character at left of the cursor: X
+- delete a word: dw
+
+Pattern: `operatior{motion}`
+
+`dw`
+
+- `d`: The delete operation
+- `w`: The word motion
+
+Delete a line: `dd`
+Delete to the end of the line: `d$` or `D`
+
+`X` is the shortcut of `dl`
+`D` is the shortcut of `d$`
+
+Example some delete combination: `dj dk dw de d$ d^ d0`
+
+There are some ways to accomplish the same task
+
+Another pattern: `[count]operaton{motion}`
+
+5dw
+
+- `5`: the count / how many times to repeat
+- `d`: the delete operation
+- `w`: the word motion
+
+The motion is also have the pattern: `[count]{motion}`
+
+`3w`
+
+- `3`: the count
+- `w`: the word motion
+
+We can even combine these motion to achieve this: `[count]operation[count]{motion}`
+
+- `3w`: repeat word motion 3 times
+- `d3w`: delete the 3w motion
+- `2d3w`: delete the 3w motion 2 times
+
+Dot command: repeat the previous command
+
