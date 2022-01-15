@@ -138,3 +138,36 @@ Yank is a `operator`, so we can use the pattern: `[count]operator[count]{motion}
 
 - `u`: undo 
 - `Ctrl r`: redo 
+
+### 2.6. Register Types
+
+- Unnamed
+- Numbered
+- Named
+
+Registers
+
+- Unnamed register = `""`
+- Numbered reigsters = `"0`, `"1`, ..., `"9`
+
+- `""` holds text from `d, c, s, x` and `y` operations.
+- `"0` holds last text yanked `y`
+- `"1` holds last text deleted `d` or changed `c`
+- numbered registers shift with each `d` or `c`
+
+To look at the register, we can use: `:reg`
+
+Put text at a specific register: `"7p`
+
+Using `blackhole` register: `"_`
+
+- `^J` is a newline character
+
+Named register: `"a`, ... `"b`
+
+`"A` append text to the existing `"a`
+
+Repeating with Registers
+
+- `[count][register]operator`
+- `[register][count]opeartor`
