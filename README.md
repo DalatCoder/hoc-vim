@@ -14,3 +14,11 @@ Why
 - Vim is like a language
 - Vim is thoroughly documented
 - Vim is fun!
+
+## 1. Quick Start
+
+Vim modes:
+
+- Normal mode (command mode)
+- Insert mode
+- Command-line mode (cmdline mode)
