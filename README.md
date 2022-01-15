@@ -101,3 +101,40 @@ Dot command: repeat the previous command
 - `Ctrl i`: navigate to current docs
 - `Ctrl ]`: jump to definition of the word under the cursor
 
+### 2.4. Deleting, Yanking and Putting
+
+#### 2.4.1 Cut, Copy and Paste
+
+Why?
+
+- Move text around a file
+- Duplicate text
+- Make an in-file backup
+- Reuse the same text
+
+You've already been cutting
+
+- `d` and `x` cut text, not just delete it
+- `cut` = `delete` and `save` into a `register`
+- `register` is a clipboard-like storage location
+
+`dd` cut a line into an `unnamed register` (`default register`)
+
+- `p`: put command (paste command)
+
+- swapline `ddp` or `ddP`
+
+Even after you paste the text, it stays in the `unnamed register` until it's overwritten by another operation.
+
+Standard vs Vim
+
+- cut = delete
+- copy = yank
+- paste = put
+
+Yank is a `operator`, so we can use the pattern: `[count]operator[count]{motion}`
+
+### 2.5. Undo & Redo
+
+- `u`: undo 
+- `Ctrl r`: redo 
