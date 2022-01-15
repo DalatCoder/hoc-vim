@@ -171,3 +171,53 @@ Repeating with Registers
 
 - `[count][register]operator`
 - `[register][count]opeartor`
+
+### 2.7. Transforming and Substituting text
+
+#### 2.7.1. Insert mode
+
+Way to enter inserting mode:
+
+- `i`
+- `I` or (`^i`): go to the beginning of the line and enter insert mode
+- `a` append text
+- `A` or (`$a`)
+- `o` add line below and enter insert mode
+- `O` add line above and enter insert mode
+
+Create a line contains 80 `*` character
+
+`[counter]operation{i,o}[typeST]<Esc>`
+
+- `80i*<Esc>`
+
+Create comment section lines
+- `5o#<Esc>`
+
+Create a list of IP address
+- `4o10.11.12.<Esc>`
+
+#### 2.7.2. Replace mode
+
+It's just really another form of insert mode
+
+Press `R`, now whatever you type will overwrite the existing text
+Press `r{character}` to replace 1 character
+
+#### 2.7.3. Changing mode
+
+Using `[count]c{motion}`, behave like the `d` command.
+
+- `cc` to change the entire line
+- `~` to change text style
+- `g~w` to change text style of the `word`
+- `g~~` to change text style of the entire line
+- `gU{motion}` to force change to `UPPERCASE`
+- `gUU` to force the entire line to `UPPERCASE`
+- `gu{motion}` to force change to `lowecase`
+- `guu` to force the entire line to `lowercase`
+
+#### 2.7.4. Joinging line
+
+- `J` join line and add some space
+- `gJ` join line but don't add space
