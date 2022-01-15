@@ -91,3 +91,13 @@ We can even combine these motion to achieve this: `[count]operation[count]{motio
 
 Dot command: repeat the previous command
 
+### 2.3. The Vim help system
+
+- `:help <COMMAND>`: `:help dd`
+- `:help {subject}`: `:help count`
+- `:help :help`
+
+- `Ctrl o`: navigate to previous docs
+- `Ctrl i`: navigate to current docs
+- `Ctrl ]`: jump to definition of the word under the cursor
+
