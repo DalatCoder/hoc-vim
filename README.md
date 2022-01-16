@@ -349,3 +349,77 @@ Block object
 Text object is used in 2 forms
 - `a` form (a, all)
 - `i` form (inner)
+
+### 3.2. Macros
+
+Repeat a series of commands.
+
+`macros` also called `complex repeat`
+
+One of the most common uses of `vim macros` is to change the format
+of data or text.
+
+Macros are nothing more than a recorded sequence of `keystrokes`.
+These keystrokes are actually saved in registers. When you playback
+a macro, all the keystrokes recorded in the register are played back
+and it's exactly the same as if you were to type those keystrokes
+again.
+
+- To create a `macros`: `q{register}`
+- When you are done: type `q`
+- To play a macros: `@{register}`
+
+Macro Best Practices
+
+- Normalize the cursor position: (`0`)
+- Perform edits and operations.
+- Position your cursor to enable easy replays: (`j`)
+
+Repeat a macros with `[count]@{register}`
+
+Macros are stored in registers and register can be append.
+
+- `qa` and `qA` (to append)
+
+Look at the content of the macro with: `:reg {register-name}`
+
+Reminder to substitute command:
+
+- `:s/"/'/g`: replace all `"` to `'`
+- `:s/(//g`: remove all `(` character
+- `:s/)//g`: remove all `)` character
+- `:s/ => /,/g`: change all ` => ` to `,`
+
+Ways to repeat a macro
+
+- using `count`
+- using `normal` command: `27,35normal @a`: @a is executed from line 27 to 35.
+
+To modify a macro, just `put` it from register, modify and `yank` into
+the register.
+
+- `"ap`
+- modify
+- `"ay$"
+
+Saving macros using `.viminfo` file
+
+- `.viminfo` file
+- stores history and non-empty registers
+- read when vim starts
+- can easily overwrite registers
+
+Saving macros using `.vimrc` file
+
+- `let @a = '0iNOTE:€ü €ýaj€ýa'`
+- `let @t = 'ITODO: ^[j`
+
+Review
+
+- Macros are a recorded series of keystrokes
+- Macros use registers
+- Start recording: `q{REGISTER}`
+- Append to a macro: `q{CAPITAL_REGISTER}`
+- Playback: `@{REGISTER}`
+- Repeat last played macro: `@@`
+- Range: `:[range]normal @{REGISTER}`
