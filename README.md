@@ -279,3 +279,73 @@ Place the cursor under a word and press `*` (or `#`) to go to the next instance 
 Specify `range` by the `pattern`: `/pattern-1/,/pattern-2/`
 
 Define a custom `pattern` sign: `:s#pattern-1#,#pattern-2#/old/new/g`
+
+## 3. Text objects and Macros
+
+### 3.1. Text objects 
+
+Text construct, such as:
+- words
+- sentences
+- paragraphs
+- tags
+- delimited 
+
+Those are `vim text object`.
+
+Text object are used after an `operator` (similar to motions)
+
+When you combine a command with a text object, a command operates
+on the entire object regradless of the cursor position.
+
+- `daw`: delete a word (include whitespace)
+- `diw`: delete inner word
+
+Pattern
+
+- `{operator}{a}{object}`
+- `{operator}{i}{object}`
+
+Examples
+
+- `daw`: Delete a word
+- `ciw`: change inner word
+
+The text object for an `entire` sentence is `as` and for an inner sentence `is`
+
+- `das`: Delete an `entire` sentences
+
+A sentence boundary is a `period`.
+
+A paragrap boundary is a `blank line`.
+
+- `ap`: entire paragraph
+- `ip`: inner paragraph
+
+Examples
+
+- `dap`: delete an entire paragraph
+
+Patterns:
+
+- `ci[` (or `ci]`): for changing text between `[]`
+- `ci(` (or `ci)`): for changing text between `()`
+- `ci<` (or `ci>`): for changing text between `<>`
+- `ci{` (or `ci}`): for changing text between `{}`
+- `ci"`: for changing text between `""`
+- `ci'`: for changing text between `''`
+- `ci``: for changing text between `\`\``
+
+Tag object 
+
+- `at`: a tag
+- `it`: inner tag
+
+Block object
+
+- `aB`
+- `iB`
+
+Text object is used in 2 forms
+- `a` form (a, all)
+- `i` form (inner)
