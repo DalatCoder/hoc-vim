@@ -423,3 +423,34 @@ Review
 - Playback: `@{REGISTER}`
 - Repeat last played macro: `@@`
 - Range: `:[range]normal @{REGISTER}`
+
+## 4. Visual mode
+
+Versions
+
+- Use `v` to start characterwise visual mode
+- Use `V` to start linewise visual mode
+- Use `Ctrl-v` to start blockwise visual mode (vertical visual mode)
+
+- Use motions to expand the visual area
+- Use text objects to expand the visual area
+
+Some of commands you can use in visual mode include:
+- `~`: switch case
+- `c`: change
+- `d`: delete
+- `y`: yank
+- `r`: replace
+- `x`: delete
+- `I`: insert
+- `A`: append
+- `J`: join
+- `u`: make lowercase
+- `U`: make uppercase
+- `>`: shift right
+- `<`: shilf left
+
+Using `o` to reverse (or `O`)
+
+Append to all lines: `Ctrl-v`, select lines and press `A` or (`I`)
+
